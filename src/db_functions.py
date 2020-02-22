@@ -23,7 +23,7 @@ def pg_select(query_string : str) -> tuple:
         params = config()
  
         # connect to the PostgreSQL server
-        print('Connecting to the PostgreSQL database...')
+        print('Connecting to PostgreSQL database...')
         conn = psycopg2.connect(**params)
       
         # create a cursor
@@ -67,7 +67,7 @@ def pg_insert(db_name : str, insert_values : str):
         params = config()
  
         # connect to the PostgreSQL server
-        print('Connecting to the PostgreSQL database...')
+        print('Connecting to PostgreSQL database...')
         conn = psycopg2.connect(**params)
       
         # create a cursor
@@ -77,14 +77,11 @@ def pg_insert(db_name : str, insert_values : str):
         insert_statement = get_insert_statement(db_name)
 
         # execute a statement
-        print('Executing query...')
+        print('Executing insert query...')
         psycopg2.extras.execute_batch(cur, insert_statement, insert_values)
- 
+
         # commit to the db
         conn.commit()
-
-       # close the communication with the PostgreSQL
-        cur.close()
 
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
