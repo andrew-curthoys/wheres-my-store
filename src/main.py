@@ -98,8 +98,8 @@ def olivina_men():
         store = store_info(store_id, store_name, address, phone)
         store_data.append(store)
 
-        # insert data into Postgres DB
-        pg_insert('olivina_men', store_data)
+    # insert data into Postgres DB
+    pg_insert('olivina_men', store_data)
 
     driver.quit()
 
@@ -136,8 +136,8 @@ def fulton_and_roark():
         store = store_info(store_id, store_name, address, phone)
         store_data.append(store)
 
-        # insert data into Postgres DB
-        pg_insert('fulton_and_roark', store_data)
+    # insert data into Postgres DB
+    pg_insert('fulton_and_roark', store_data)
 
     driver.quit()
 
@@ -174,14 +174,14 @@ def cbd_for_life():
         store = store_info(store_id, store_name, address, phone)
         store_data.append(store)
 
-        # insert data into Postgres DB
-        pg_insert('cbd_for_life', store_data)
+    # insert data into Postgres DB
+    pg_insert('cbd_for_life', store_data)
 
     driver.quit()
 
 
 if __name__ == "__main__":
     olivina_men()
-    fulton_and_roark()
-    cbd_for_life()
+    #fulton_and_roark()
+    #cbd_for_life()
     # duke_cannon()
