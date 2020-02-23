@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.options import Options
 from collections import namedtuple
 from db_functions import pg_insert, pg_select
-import zip_codes
+from zip_codes import get_zip_codes
 import csv
 import time
 
@@ -22,6 +22,7 @@ def duke_cannon():
         driver.get("https://dukecannon.com/pages/store-locator")
 
         # input zip code
+        print(f'Gettings results for zip code: {zip_code}')
         zip_code_input = driver.find_element_by_id('storemapper-zip')
         zip_code_input.send_keys(zip_code)
 
@@ -181,7 +182,7 @@ def cbd_for_life():
 
 
 if __name__ == "__main__":
-    olivina_men()
+    #olivina_men()
     #fulton_and_roark()
     #cbd_for_life()
-    # duke_cannon()
+    duke_cannon()
